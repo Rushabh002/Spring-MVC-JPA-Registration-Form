@@ -31,7 +31,7 @@ public class FormController {
     }
 
     @RequestMapping("find")
-    public String find(Model m){
+    public String find(){
 
         return "findbyid";
     }
@@ -40,5 +40,17 @@ public class FormController {
 
         m.addAttribute("r",repo.findById(Id));
         return "result";
+    }
+    @RequestMapping("delete")
+    public String delete(){
+
+        return "delete";
+    }
+    @RequestMapping("deleted")
+    public String deleted(@RequestParam("id") String Id){
+
+       repo.deleteById(Id);
+       return "deleted";
+
     }
 }

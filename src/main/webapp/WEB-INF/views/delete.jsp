@@ -14,13 +14,13 @@
 
     <div class ="container mt-5">
     <h3 class="text-center">Find User By ID</h3>
-      <form action="result" method="post">
+      <form action="deleted" method="post">
       <div class="form-group">
               <label for="exampleInputEmail1">Id</label>
                   <input type="text" class="form-control" name="id" aria-describedby="emailHelp" placeholder="Enter Id">
             </div>
        <div class="container text-center">
-       <button type="submit" class="btn btn-success">Search</button>
+       <button type="submit" class="btn btn-success">Delete</button>
        </div>
        </form>
        </div>
