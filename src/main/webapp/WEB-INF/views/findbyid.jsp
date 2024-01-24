@@ -13,28 +13,14 @@
   <body>
 
     <div class ="container mt-5">
-    <h3 class="text-center">Registration Form</h3>
-      <form action="save" method="post">
+    <h3 class="text-center">Find User By ID</h3>
+      <form action="result" method="post">
       <div class="form-group">
-              <label for="exampleInputEmail1">Id</label>
+              <label for="exampleInputEmail1">Email address</label>
                   <input type="text" class="form-control" name="id" aria-describedby="emailHelp" placeholder="Enter Id">
             </div>
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
-      </div>
-
-      <div class="form-group">
-         <label for="username">Username</label>
-         <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter Username">
-      </div>
-
-       <div class="form-group">
-         <label for="password">Password</label>
-         <input type="password" class="form-control" name="pass" aria-describedby="emailHelp" placeholder="Enter Password">
-       </div>
        <div class="container text-center">
-       <button type="submit" class="btn btn-success">Sign Up</button>
+       <button type="submit" class="btn btn-success">Search</button>
        </div>
        </form>
        </div>

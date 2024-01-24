@@ -5,10 +5,29 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Login {
-@Id
+    @Id
+    private int id;
     private String email;
     private String username;
     private String pass;
+
+    public Login(int id, String email, String username, String pass) {
+        this.id = id;
+        this.email = email;
+        this.username = username;
+        this.pass = pass;
+    }
+
+    public Login() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
@@ -34,19 +53,11 @@ public class Login {
         this.pass = pass;
     }
 
-    public Login(String email, String username, String pass) {
-        this.email = email;
-        this.username = username;
-        this.pass = pass;
-    }
-
-    public Login() {
-    }
-
     @Override
     public String toString() {
         return "Login{" +
-                "email='" + email + '\'' +
+                "id=" + id +
+                ", email='" + email + '\'' +
                 ", username='" + username + '\'' +
                 ", pass='" + pass + '\'' +
                 '}';

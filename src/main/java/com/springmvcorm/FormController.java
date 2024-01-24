@@ -13,7 +13,7 @@ public class FormController {
     @Autowired
     LoginRepo repo;
     @RequestMapping("/")
-    public String show( ){
+    public String show(){
 
         return  "form";
     }
@@ -30,5 +30,15 @@ public class FormController {
         return "show";
     }
 
+    @RequestMapping("find")
+    public String find(Model m){
 
+        return "findbyid";
+    }
+    @RequestMapping("result")
+    public String result(@RequestParam("id") String Id,Model m){
+
+        m.addAttribute("r",repo.findById(Id));
+        return "result";
+    }
 }
