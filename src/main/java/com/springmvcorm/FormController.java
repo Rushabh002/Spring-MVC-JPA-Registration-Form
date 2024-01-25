@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 public class FormController {
     @Autowired
@@ -36,9 +38,15 @@ public class FormController {
         return "findbyid";
     }
     @RequestMapping("result")
-    public String result(@RequestParam("id") String Id,Model m){
+    public String result(@RequestParam("id") String Id, Model m) {
+        Optional<Login> result = repo.findById(Id);
 
-        m.addAttribute("r",repo.findById(Id));
+        if (result.isPresent()) {
+            Login login = result.get();
+            m.addAttribute("r", login);
+        } else {
+            m.addAttribute("error", "No user found with ID: " + Id);
+        }
         return "result";
     }
     @RequestMapping("delete")
@@ -51,6 +59,5 @@ public class FormController {
 
        repo.deleteById(Id);
        return "deleted";
-
     }
 }
